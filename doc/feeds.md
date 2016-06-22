@@ -178,8 +178,11 @@ This WILL be the nntpchan pastebin, but it's not implemented yet
 
     ctl=1
 
-Allows you to recieve moderation notifications from other boards, it's also used for decentralized moderation
+Allows you to receive moderation notifications from other boards, it's also used for decentralized moderation
 
 ##Alternative config location
 
 If you would like to have your feeds.ini somewhere other than in the working directory, you can set the `SRND_FEEDS_INI_PATH` environment variable. For example, if you would like to use `/etc/nntpchan/meems.ini`, edit `~/.profile` and add `export SRND_FEEDS_INI_PATH=/etc/nntpchan/meems.ini`. 
+
+##Feed config relead
+Unlike `srnd.ini`, `feeds.ini` will automatically reload when you add new feeds. You don't have to restart SRNdv2 for changes to your feeds config to take effect. 
