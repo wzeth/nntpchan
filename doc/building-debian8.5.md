@@ -6,7 +6,10 @@ Install the initial dependencies:
 apt-get -y --no-install-recommends install imagemagick libsodium-dev sox git ca-certificates libav-tools build-essential tcl8.5
 ```
 
+You have two options for data storage. You can either use redis or PostgreSQL. 
+
 ##Install redis
+You can skip this step if you want to install PostgreSQL as your data store.
 
 It is not recommended that you install redis from the default package repos because it is probably not up to date.
 
@@ -39,6 +42,19 @@ It is *strongly recommended* that you use a password for redis. I am generating 
 ```
 
 Edit `/etc/redis/6379.conf` and append the file with `requirepass YOUR_LONG_PASSWORD_HERE`.
+
+## Instal PostgreSQL
+You can skip this step if you installed redis and want to use redis as your data store.
+
+```
+apt-get install -y postgresql postgresql-client
+```
+
+Now we run this command to get a role and database for the system:
+
+```
+# su - postgres -c "createuser --pwprompt --createdb --encrypted srnd"
+```
 
 ## Install golang
 
